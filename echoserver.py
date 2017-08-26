@@ -47,7 +47,7 @@ def send_message(token, recipient, text):
     params={"access_token": token},
     data=json.dumps({
       "recipient": {"id": recipient},
-      "message": {"text": "Тестовое сообщение"}
+      "message": {"text": "Privet! Ya chat-bot etoy gruppy. Chtoby zapostit na stranizu, otprav mne soobscheniye 'Send'"}
     }),
     headers={'Content-type': 'application/json'})
   if r.status_code != requests.codes.ok:
