@@ -3,6 +3,7 @@
 from flask import Flask, request
 import json
 import requests
+import re
 
 app = Flask(__name__)
 
@@ -45,7 +46,7 @@ def messaging_events(payload):
 def send_message(token, recipient, text):
   """Send the message text to recipient with id recipient.
   """
-  if text == regexp"[.ru]":
+  if re.text == "[.ru]":
     r = requests.post("https://graph.facebook.com/v2.6/me/messages",
       params={"access_token": token},
       data=json.dumps({
