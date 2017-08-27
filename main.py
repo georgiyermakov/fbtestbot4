@@ -45,12 +45,12 @@ def messaging_events(payload):
 def send_message(token, recipient, text):
   """Send the message text to recipient with id recipient.
   """
-  if text == "12345":
+  if text == "[.ru]":
     r = requests.post("https://graph.facebook.com/v2.6/me/messages",
       params={"access_token": token},
       data=json.dumps({
         "recipient": {"id": recipient},
-        "message": {"text": "dfsgfd"}
+        "message": {"text": "URL"}
       }),
       headers={'Content-type': 'application/json'})
   else:
@@ -58,7 +58,7 @@ def send_message(token, recipient, text):
       params={"access_token": token},
       data=json.dumps({
         "recipient": {"id": recipient},
-        "message": {"text": "124343"}
+        "message": {"text": "Привет! Я чат-бот этой группы. Чтобы опубликовать материал, пришли мне ссылку с описанием"}
       }),
       headers={'Content-type': 'application/json'})
   if r.status_code != requests.codes.ok:
