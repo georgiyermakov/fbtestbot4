@@ -49,10 +49,7 @@ def send_message(token, recipient, text):
     params={"access_token": token},
     data=json.dumps({
       "recipient": {"id": recipient},
-      if "message" == "12345":
-        "message": {"text": "54321"}
-      else:
-        "message": {"text": "Привет!"}
+      "message": {"text": "Привет!"}
     }),
     headers={'Content-type': 'application/json'})
   if r.status_code != requests.codes.ok:
