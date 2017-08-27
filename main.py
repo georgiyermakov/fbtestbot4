@@ -47,11 +47,21 @@ def send_message(token, recipient, text):
 
   r = requests.post("https://graph.facebook.com/v2.6/me/messages",
     params={"access_token": token},
-    data=json.dumps({
+
+    if "message" = "12345":
+      data=json.dumps({
+      "recipient": {"id": recipient},
+      "message": {"text": "54321"}
+      }),
+      headers={'Content-type': 'application/json'})
+    else:
+      data=json.dumps({
       "recipient": {"id": recipient},
       "message": {"text": "Привет! Я чат-бот этой группы. Чтобы разместить публикацию, отправь мне сообщение со словом POST"}
     }),
     headers={'Content-type': 'application/json'})
+  
+
   if r.status_code != requests.codes.ok:
     print r.text
 
