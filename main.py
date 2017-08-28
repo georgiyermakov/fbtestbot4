@@ -24,7 +24,6 @@ def handle_verification():
 def handle_messages():
   print "Handling Messages"
   payload = request.get_data()
-  message2 = "1243124"
   print payload
   for sender, message in messaging_events(payload):
     print "Incoming from %s: %s" % (sender, message)
@@ -53,6 +52,13 @@ def send_message(token, recipient, text):
       data=json.dumps({
         "recipient": {"id": recipient},
         "message": {"text": "URL"}
+        "buttons":[
+        {
+          "type":"postback",
+          "title":"Bookmark Item",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD"
+        }
+      ]
         }),
       headers={'Content-type': 'application/json'})
   else:
