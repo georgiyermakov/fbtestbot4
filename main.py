@@ -51,10 +51,10 @@ def send_message(token, recipient, text):
       params={"access_token": token},
       data=json.dumps({
         "recipient": {"id": recipient},
-        "messages": [{"attachment": {
+        "message": [{"attachment": {
         "type": "image",
         "payload": {
-          "url": "http://georgiyermakov.ru/files/gimgs/1_loshadinaya-sila.jpg"}}}, {"text": "How can I help you?"}]
+          "url": "http://georgiyermakov.ru/files/gimgs/1_loshadinaya-sila.jpg"}}},
       }),
       headers={'Content-type': 'application/json'})
   else:
@@ -63,7 +63,6 @@ def send_message(token, recipient, text):
       data=json.dumps({
         "recipient": {"id": recipient},
         "message": {"text": "Привет! Я чат-бот этой группы. Чтобы опубликовать материал, пришли мне ссылку с описанием"},
-        "message": {"text": "2"}
       }),
       headers={'Content-type': 'application/json'})
   if r.status_code != requests.codes.ok:
