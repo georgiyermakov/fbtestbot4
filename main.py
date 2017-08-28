@@ -51,7 +51,7 @@ def send_message(token, recipient, text):
       params={"access_token": token},
       data=json.dumps({
         "recipient": {"id": recipient},
-        "message": [{"attachment": {
+        "message": {"attachment": {
         "type": "image",
         "payload": {
           "url": "http://georgiyermakov.ru/files/gimgs/1_loshadinaya-sila.jpg"}}},
