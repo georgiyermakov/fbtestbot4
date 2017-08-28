@@ -51,10 +51,10 @@ def send_message(token, recipient, text):
       params={"access_token": token},
       data=json.dumps({
         "recipient": {"id": recipient},
-        "message": {"attachment": {
+        "messages": [{"attachment": {
         "type": "image",
         "payload": {
-          "url": "http://georgiyermakov.ru/files/gimgs/1_loshadinaya-sila.jpg"}}}
+          "url": "http://georgiyermakov.ru/files/gimgs/1_loshadinaya-sila.jpg"}}}, {"text": "How can I help you?"}]
       }),
       headers={'Content-type': 'application/json'})
   else:
