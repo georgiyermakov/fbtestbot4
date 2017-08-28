@@ -53,8 +53,7 @@ def send_message(token, recipient, text):
       data=json.dumps({
         "recipient": {"id": recipient},
         "message": {"text": "URL"}
-        "message": {"button": "sdfsadf"}
-      }),
+        }),
       headers={'Content-type': 'application/json'})
   else:
     r = requests.post("https://graph.facebook.com/v2.6/me/messages",
