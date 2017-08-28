@@ -54,7 +54,7 @@ def send_message(token, recipient, text):
         "message": {"attachment": {
         "type": "image",
         "payload": {
-          "url": "https://petersapparel.parseapp.com/img/item101-thumb.png"}}}
+          "url": "http://georgiyermakov.ru/files/gimgs/1_loshadinaya-sila.jpg"}}}
       }),
       headers={'Content-type': 'application/json'})
   else:
