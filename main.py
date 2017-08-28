@@ -51,11 +51,7 @@ def send_message(token, recipient, text):
       params={"access_token": token},
       data=json.dumps({
         "recipient": {"id": recipient},
-        "message": {"text": "URL"}
-        "button": {"type":"postback",
-          "title":"Bookmark Item",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD"
-        }
+        "message": {"button": "URL"}
         }),
       headers={'Content-type': 'application/json'})
   else:
