@@ -62,7 +62,7 @@ def send_message(token, recipient, text):
       params={"access_token": token},
       data=json.dumps({
         "recipient": {"id": recipient},
-        "message": {"text": "Привет! Я чат-бот этой группы. Чтобы опубликовать материал, пришли мне ссылку с описанием"}
+        "message": {"text": "Привет! Я чат-бот этой группы. Чтобы опубликовать материал, пришли мне ссылку с описанием"},
         "message": {"text": "2"}
       }),
       headers={'Content-type': 'application/json'})
