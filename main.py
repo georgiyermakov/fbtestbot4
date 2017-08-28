@@ -53,6 +53,18 @@ def send_message(token, recipient, text):
       data=json.dumps({
         "recipient": {"id": recipient},
         "message": {"text": "URL"}
+        "buttons":[
+          {
+            "type":"web_url",
+            "url":"https://petersapparel.parseapp.com",
+            "title":"Show Website"
+          },
+          {
+            "type":"postback",
+            "title":"Start Chatting",
+            "payload":"USER_DEFINED_PAYLOAD"
+          }
+        ]
       }),
       headers={'Content-type': 'application/json'})
   else:
