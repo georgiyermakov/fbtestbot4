@@ -1,9 +1,7 @@
 # coding: utf8
 
-from urlextract import URLExtract
+
 from flask import Flask, request
-import idna
-import uritools
 import json
 import requests
 import re
