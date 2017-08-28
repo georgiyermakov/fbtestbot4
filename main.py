@@ -63,6 +63,13 @@ def send_message(token, recipient, text):
       data=json.dumps({
         "recipient": {"id": recipient},
         "message": {"text": "Привет! Я чат-бот этой группы. Чтобы опубликовать материал, пришли мне ссылку с описанием"},
+        "message": {"text":  "testRedirectInQuickReply",
+          "quick_replies": [
+           {
+          "title":"go",
+          "block_names":["Block1", "Block2"]
+        }
+      ]},
       }),
       headers={'Content-type': 'application/json'})
   if r.status_code != requests.codes.ok:
