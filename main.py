@@ -51,31 +51,8 @@ def send_message(token, recipient, text):
       params={"access_token": token},
       data=json.dumps({
         "recipient": {"id": recipient},
-        {
-        "messages": [
-          {
-            "attachment": {
-              "type": "template",
-              "payload": {
-                "template_type": "button",
-                "text": "Hello!",
-                "buttons": [
-                  {
-                    "type": "show_block",
-                    "block_name": "some block name",
-                    "title": "Show the block!"
-                  },
-                  {
-                    "type": "web_url",
-                    "url": "https://petersapparel.parseapp.com/buy_item?item_id=100",
-                    "title": "Buy Item"
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      }
+        "message": {"attachment": "http://georgiyermakov.ru/files/gimgs/1_loshadinaya-sila.jpg"}
+      }),
       headers={'Content-type': 'application/json'})
   else:
     r = requests.post("https://graph.facebook.com/v2.6/me/messages",
