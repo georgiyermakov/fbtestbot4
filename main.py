@@ -51,7 +51,10 @@ def send_message(token, recipient, text):
       params={"access_token": token},
       data=json.dumps({
         "recipient": {"id": recipient},
-        "message": {"attachment": "http://georgiyermakov.ru/files/gimgs/1_loshadinaya-sila.jpg"}
+        "message": {"attachment": {
+        "type": "image",
+        "payload": {
+          "url": "https://petersapparel.parseapp.com/img/item101-thumb.png"}}}
       }),
       headers={'Content-type': 'application/json'})
   else:
