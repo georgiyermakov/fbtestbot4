@@ -52,13 +52,10 @@ def send_message(token, recipient, text):
       data=json.dumps({
         "recipient": {"id": recipient},
         "message": {"text": "URL"}
-        "buttons":[
-        {
-          "type":"postback",
+        "button": {"type":"postback",
           "title":"Bookmark Item",
           "payload":"DEVELOPER_DEFINED_PAYLOAD"
         }
-      ]
         }),
       headers={'Content-type': 'application/json'})
   else:
