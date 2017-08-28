@@ -51,7 +51,7 @@ def send_message(token, recipient, text):
       params={"access_token": token},
       data=json.dumps({
         "recipient": {"id": recipient},
-        "message": {"button": "URL"}
+        "button": {"text": "URL"}
         }),
       headers={'Content-type': 'application/json'})
   else:
